@@ -30,7 +30,7 @@ urllib
 
 ## Rapport
 
-- Seulement 30 contributeurs au maximum sont accessibles pour une seule requête : pour télécharger la liste complète des contributeurs de respository, je n'ai pas trouvé une manière de faire que de parcourir les différentes pages de contributeurs, ce qui ralentit le processus.
+- Seulement 30 contributeurs au maximum sont accessibles pour une seule requête : pour télécharger la liste complète des contributeurs de respository, je n'ai pas trouvé une autre manière de faire que de parcourir les différentes pages de contributeurs, ce qui ralentit le processus.
 
 - J'ai eu dans un premier temps un doute sur la signification de la donnée 'contributions' fourni pour un contributeur : est-ce que cette donnée représente toutes les contributions de l'utilisateur sur Github dans sa globalité, ou est-ce que cela représente seulement ces contributions sur le repos ?
 
