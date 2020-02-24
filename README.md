@@ -8,7 +8,6 @@ L'objectif est d'analyser la distribution des contributions par contributeur au 
 requests
 json
 getpass
-csv
 datetime
 matplotlib
 urllib
