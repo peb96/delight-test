@@ -66,47 +66,58 @@ def getToken():
 			print("# Value error : please enter a valid answer (Y/N)")
 
 	if token_available == "Y":
-		token = input('Insert token here: ')
+		while True:
+			token = input('Insert token here: ')
 
-		# requête
-		res = requests.get(github_api)
+			# requête
+			headers =  {'Authorization': 'token %s' % token}
+			res = requests.get(
+				github_api,
+				headers = headers
+				)
 
-		# check erreurs
-		if res.status_code >= 400:
-			msg = j.get('message', 'UNDEFINED ERROR (no error description from server)')
-			print('ERROR: %s', msg)
-			return
+			#parse
+			j = json.loads(res.text)
+
+			# check erreurs
+			if res.status_code >= 400:
+				msg = j.get('message', 'UNDEFINED ERROR (no error description from server)')
+				print('ERROR:', msg)
+			else:
+				break
 
 		print('# This token is valid.')
 		return token
 
 	else:
-		# entrées des identifiants
-		username = input('Github username: ')
-		password = getpass.getpass('Github password (hidden): ')
+		while True:
+			# entrées des identifiants
+			username = input('Github username: ')
+			password = getpass.getpass('Github password (hidden): ')
 
-		# rajout d'une note pour le token
-		note = input('Note (write anything): ')
+			# rajout d'une note pour le token
+			note = input('Note (write anything): ')
 
-		# requête
-		url = urljoin(github_api, 'authorizations')
-		payload = {}
-		if note:
-			payload['note'] = note
-		res = requests.post(
-			url,
-			auth = (username, password),
-			data = json.dumps(payload),
-			)
+			# requête
+			url = urljoin(github_api, 'authorizations')
+			payload = {}
+			if note:
+				payload['note'] = note
+			res = requests.post(
+				url,
+				auth = (username, password),
+				data = json.dumps(payload),
+				)
 
-		# parse
-		j = json.loads(res.text)
+			# parse
+			j = json.loads(res.text)
 
-		# check erreurs
-		if res.status_code >= 400:
-			msg = j.get('message', 'UNDEFINED ERROR (no error description from server)')
-			print('ERROR: %s', msg)
-			return
+			# check erreurs
+			if res.status_code >= 400:
+				msg = j.get('message', 'UNDEFINED ERROR (no error description from server)')
+				print('ERROR:', msg)
+			else:
+				break
 
 		# reception token
 		token = j['token']
@@ -240,7 +251,7 @@ def globalActivity(headers, list_contributors):
 
 	print("# Show global activity of : \n (1) All users (long) \n (2) One user")
 	while True:
-		choice = input("Answer (type a integer) : ")
+		choice = input("Answer (enter a integer) : ")
 		if choice == '1' or choice == '2':
 			break
 		else:
