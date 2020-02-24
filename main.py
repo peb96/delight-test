@@ -229,7 +229,7 @@ def contributionsVisualizer(headers,list_contributors):
 	plt.figure(figsize=(10,5), dpi=100)
 	y = list(proportion_contributors.values())
 	x = list(proportion_contributors.keys())
-	plt.loglog(x,y, 'b')
+	plt.loglog(x,y, '-s')
 	plt.fill_between( x, y, color="skyblue", alpha=0.4)
 	plt.xlabel("Contributors")
 	plt.ylabel("Contributions")
@@ -282,6 +282,10 @@ def globalActivity(headers, list_contributors):
 					list_commit_user = list_commit_user + list_commit_user_temp
 
 			i += 1
+
+			# compte progression
+			nb_commit = len(list_commit_user)
+			print(str(nb_commit), end="\r")
 
 	# téléchargement des commits d'un utilisateur
 	if choice == '2':
