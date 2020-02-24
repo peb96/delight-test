@@ -18,7 +18,7 @@ urllib
 
 1/ Lancer l'éxecutable 'main.py' à l'aide de Python 3.
 
-2/ Rentrer ses identifiants pour recevoir un token permettant l'envoi de requêtes multiples. (ou rentrer directement un token
+2/ Rentrer ses identifiants pour recevoir un token permettant l'envoi de requêtes multiples. (ou rentrer directement un token)
 
 3/ Téléchargement des contributeurs
 
