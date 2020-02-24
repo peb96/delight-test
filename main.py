@@ -5,7 +5,6 @@ github_api = 'https://api.github.com'
 import requests
 import json
 import getpass
-import csv
 from datetime import date, timedelta, timezone, datetime
 import matplotlib.pyplot as plt
 from urllib.parse import urljoin
