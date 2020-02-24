@@ -17,10 +17,15 @@ urllib
 ## Usage
 
 1/ Lancer l'éxecutable 'main.py' à l'aide de Python 3.
+
 2/ Rentrer ses identifiants pour recevoir un token permettant l'envoi de requêtes multiples. (ou rentrer directement un token
+
 3/ Téléchargement des contributeurs
+
 4/ Création à la racine d'un fichier texte rapportant les commits journaliers (une alerte apparait si il y en a moins de 2)
+
 5/ Création à la racine d'un fichier 'contributors.distribution.png'  permettant la visualisation de la proportion des contributeurs qui ont réalisé un nombre de contributions.
+
 6/ Création à la racine d'un fichier 'global_activity.png' permettant de visualiser le nombre de commits effectués depuis la création du repository.
 
 
